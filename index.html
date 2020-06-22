@@ -1,1 +1,32 @@
-index.html
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    var $_GET = (function () {
+      var url = window.document.location.href.toString();
+      var u = url.split("?");
+      if (typeof (u[1]) == "string") {
+        u = u[1].split("&");
+        var get = {};
+        for (var i in u) {
+          var j = u[i].split("=");
+          get[j[0]] = j[1];
+        }
+        return get;
+      } else {
+        return {};
+      }
+    })()
+
+    console.log($_GET)
+  </script>
+</body>
+
+</html>
